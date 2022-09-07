@@ -1,0 +1,52 @@
+{% load static %}
+<header class="header-area main-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="logo-area">
+                        <a href="#"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <div class="custom-navbar">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>  
+                    <div class="main-menu">
+                        <ul>
+                            <li class="active"><a href="#">home</a></li>
+                            <li><a href="#">about us</a></li>
+                            <li><a href="#">category</a></li>
+                            <li><a href="#">blog</a>
+                                <ul class="sub-menu">
+                                    <li><a href="#">Blog Home</a></li>
+                                    <li><a href="#">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">contact</a></li>
+                            <li><a href="#">pages</a>
+                                <ul class="sub-menu">
+                                    <li><a href="#">Job Search</a></li>
+                                    <li><a href="#">Job Single</a></li>
+                                    <li><a href="#">Pricing Plan</a></li>
+                                    <li><a href="#">Elements</a></li>
+                                </ul>
+                            </li>
+                            <!-- {% if user.is_anonymous %}
+                            <li class="menu-btn">
+                                <a href="" class="login">log in</a>
+                                <a href="" class="template-btn">sign up</a>
+                            </li>
+                            {% else %}
+                            <li class="menu-btn">
+                                <a href="/admin/" class="template-btn">{{user.username}}</a>
+                                <a href="{% url 'log_out' %}">Log Out</a>
+                            </li>
+                            {% endif %} -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+</header>
