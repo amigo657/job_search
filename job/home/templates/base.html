@@ -24,15 +24,9 @@
 </head>
 <body>
     
-    {% include "home/header.html" %}
-    <!-- {% block home %}{% endblock home %}
-    {% block user %}{% endblock user %}
-    {% comment %} {% include "base/banner_area.html" %} {% endcomment %}
-    {% block about %}{% endblock about %}
-    {% block category %}{% endblock category %}
-    {% block blog_home %}{% endblock blog_home %}
-    {% block blog_details %}{% endblock blog_details %} -->
-    {% include "home/footer.html" %}
+    {% include "base/header.html" %}
+    {% block home %}{% endblock home %}
+    {% include "base/footer.html" %}
 
     <script src="{% static 'js/vendor/jquery-2.2.4.min.js' %}"></script>
 	<script src="{% static 'js/vendor/bootstrap-4.1.3.min.js' %}"></script>
