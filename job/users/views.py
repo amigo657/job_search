@@ -1,10 +1,24 @@
+from django.http import HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
-from .forms import LoginForm
-from django.shortcuts import render
+from .forms import LoginForm, SignInForm
+from django.shortcuts import render, redirect
 
 
 def sign_in(request):
-    return render(request, "sign_in.html", {})
+    user_form = {"user_form" : SignInForm()}
+    if request.method == "POST":
+        user_form = SignInForm(request.POST)
+        if user_form.is_valid():
+            print(user_form.is_valid())
+            # context = {"login_form": LoginForm()}
+            return redirect('/users/log_in/')
+            # return render(request, "log_in.html", context)
+        else:
+            # return HttpResponseRedirect("/users/log_in/")
+            return render(request, "sign_in.html", user_form)
+    else:
+        return render(request, "sign_in.html", user_form)
+
 
 # def log_in(request):
 #     if request.method == 'POST':

@@ -1,5 +1,36 @@
 {% extends 'base.html' %}
 
 {% block sign_in %}
-<h1>Hello</h1>
+    <div class="offset-lg-3 col-lg-4 col-md-6">
+    <div class="course-form-section">
+        <h3 class="">Find the job of your dream</h3>
+        <p class="">It is high time for work</p>
+    <form class="course-form-area contact-page-form course-form text-right" id="myForm" action="" method="post">
+        {% csrf_token %}
+        <div class="form-group col-md-12">
+            {{user_form.first_name}}
+        </div>
+        <div class="form-group col-md-12">
+            {{user_form.label}}
+            {{user_form.username}}
+        </div>
+        <div class="form-group col-md-12">
+            {{user_form.email}}
+        </div>
+        <div class="form-group col-md-12">
+            {{user_form.password}}
+        </div>
+        <div class="form-group col-md-12">
+            {{user_form.repeat_password}}
+        </div>
+        <div class="form-group col-md-12" align = "center">
+            <p align = "center">Are you agree ?</p>
+            {{user_form.is_agree}}
+        </div>
+        <div class="col-lg-12 text-center">
+        <button class="btn text-uppercase">Sign In</button>
+    </div>
+    </form>
+    </div>
+</div>
 {% endblock sign_in %}
