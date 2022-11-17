@@ -25,9 +25,23 @@
 <body>
     
     {% include "base/header.html" %}
+<<<<<<< HEAD
     {% block home %}{% endblock home %}
     {% block jobs %}{% endblock jobs %}
+=======
+    {% block home %}
+    {% endblock home %}
+    {% block about_us %}
+    {% endblock about_us %}
+    {% block sign_in %}
+    {% block log_in %}
+    {% block blog_home %}
+    {% include "base/employee.html" %}
+    {% endblock blog_home %}
+>>>>>>> 8bbdaef (login page)
     {% include "base/footer.html" %}
+    {% endblock log_in %}
+    {% endblock sign_in %}
 
     <script src="{% static 'js/vendor/jquery-2.2.4.min.js' %}"></script>
 	<script src="{% static 'js/vendor/bootstrap-4.1.3.min.js' %}"></script>

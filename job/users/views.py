@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.http import HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from .forms import LoginForm, SignInForm
@@ -24,6 +25,35 @@ def sign_in(request):
 
 def log_in(request):
     context = {"login_form": LoginForm()}
+=======
+from django.contrib.auth import authenticate, login, logout
+from .forms import LoginForm
+from django.shortcuts import render
+
+
+def sign_in(request):
+    return render(request, "sign_in.html", {})
+
+# def log_in(request):
+#     if request.method == 'POST':
+#         form = LoginForm(request.POST)
+#         if form.is_valid():
+#             cd = form.cleaned_data
+#             user = authenticate(username=cd['username'], password=cd['password'])
+#             print(user)
+#             print(type(user))
+#             if user is not None:
+#                 if user.is_active:
+#                     login(request, user)
+#                     return render(request, "home.html", {})
+#     else:
+#         form = LoginForm()
+#     return render(request, 'log_in.html', {'form': form})
+
+def log_in(request):
+    context = {"login_form": LoginForm()}
+    print(context)
+>>>>>>> 8bbdaef (login page)
     if request.method == "POST":
         user_form = LoginForm(request.POST)
         if user_form.is_valid():

@@ -15,12 +15,12 @@
                     </div>  
                     <div class="main-menu">
                         <ul>
-                            <li class="active"><a href="#">home</a></li>
-                            <li><a href="#">about us</a></li>
+                            <li class="active"><a href="{% url 'home' %}">home</a></li>
+                            <li><a href="{% url 'about_us' %}">about us</a></li>
                             <li><a href="#">category</a></li>
-                            <li><a href="#">blog</a>
+                            <li><a href="{% url 'blog_home' %}">blog</a>
                                 <ul class="sub-menu">
-                                    <li><a href="#">Blog Home</a></li>
+                                    <li><a href="{% url 'blog_home' %}">Blog Home</a></li>
                                     <li><a href="#">Blog Details</a></li>
                                 </ul>
                             </li>
@@ -34,6 +34,7 @@
                                 </ul>
                             </li>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                             <li class="menu-btn">
                                 <a href="#" class="login">log in</a>
@@ -46,6 +47,19 @@
                                 <a href="#" class="template-btn">sign up</a>
                             </li>
                             
+=======
+                            {% if user.is_anonymous %}
+                                <li class="menu-btn">
+                                    <a href="{% url 'login' %}" class="login">log in</a>
+                                    <a href="{% url 'sign_in' %}" class="template-btn">sign up</a>
+                                </li>
+                            {% else %}
+                                <li class="menu-btn">
+                                    <a href="/admin/" class="template-btn">{{user.username}}</a>
+                                    <a href="{% url 'log_out' %}">Log Out</a>
+                                </li>
+                            {% endif %}
+>>>>>>> 8bbdaef (login page)
                         </ul>
                     </div>
                 </div>
