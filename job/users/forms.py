@@ -1,9 +1,6 @@
 from django import forms
-<<<<<<< HEAD
 from django.contrib.auth.models import User
 from .models import User
-=======
->>>>>>> 8bbdaef (login page)
 
 class LoginForm(forms.Form):
     username = forms.CharField(
@@ -32,7 +29,6 @@ class LoginForm(forms.Form):
     )
 
     # username = forms.CharField()
-<<<<<<< HEAD
     # password = forms.CharField(widget = forms.PasswordInput())
 
 class SignInForm(forms.Form):
@@ -116,9 +112,3 @@ class SignInForm(forms.Form):
         )
         new_user.save()
 
-class ProfileEditForm(forms.ModelForm):
-    class Meta:
-        model = User
-=======
-    # password = forms.CharField(widget = forms.PasswordInput())
->>>>>>> 8bbdaef (login page)

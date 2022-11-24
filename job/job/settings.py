@@ -38,13 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
-<<<<<<< HEAD
     'category',
-=======
     'about_us',
     'blog_home',
     'users',
->>>>>>> 8bbdaef (login page)
 ]
 
 MIDDLEWARE = [

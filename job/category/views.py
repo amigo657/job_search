@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from category.models import Jobs
 
 def jobs(request):
-    return render(request, "category.html", {})
+    job = {"job" : Jobs.objects.all()}
+    return render(request, "category.html", job)

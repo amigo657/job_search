@@ -42,10 +42,27 @@
                 </div>
             </div>
         </div>
+
         <div class="row">
             <div class="col-lg-8">
                 <div class="main-content">
                     <div class="single-content1">
+                        {% for i in job%}
+                        <div class="single-job mb-4 d-lg-flex justify-content-between">
+                            <div class="job-text">
+                                <h4>{{ i.title }}</h4>
+                                <ul class="mt-4">
+                                    <li class="mb-3"><h5><i class="fa fa-map-marker"></i> {{ i.place }} </h5></li>
+                                    <li class="mb-3"><h5><i class="fa fa-pie-chart"></i> {{ i.salary }} </h5></li>
+                                    <li><h5><i class="fa fa-clock-o"></i> {{ i.work_time }} </h5></li>
+                                </ul>
+                            </div>
+                            <div class="job-img align-self-center">
+                                <img src="{% static 'images/job1.png' %}" alt="job">
+                            </div>
+                        </div>
+                        {% endfor %}
+
                         <div class="single-job mb-4 d-lg-flex justify-content-between">
                             <div class="job-text">
                                 <h4>Assistant Executive - Production/ Quality Control</h4>
