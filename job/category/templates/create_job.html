@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block create_job %}
+<div class="offset-lg-3 col-lg-4 col-md-6">
+    <div class="course-form-section">
+        <h3 class="">Courses for Free</h3>
+        <p class="">It is high time for learning</p>
+        <form class="course-form-area contact-page-form course-form text-right" id="myForm" action="{% url 'create_job' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group col-md-12">
+                {{ create_job.title }}
+            </div>
+            <div class="form-group col-md-12">
+                {{ create_job.work_class }}
+            </div>
+            <div class="form-group col-md-12">
+                {{ create_job.place }}
+            </div>
+            <div class="form-group col-md-12">
+                {{ create_job.work_time }}
+            </div>
+            <div class="form-group col-md-12">
+                {{ create_job.salary }}
+            </div>
+            <div class="form-group col-md-12">
+                {{ create_job.text }}
+            </div>
+            <div class="col-lg-12 text-center">
+                <button class="btn text-uppercase">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock create_job %}

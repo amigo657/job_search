@@ -9,8 +9,8 @@ class User(models.Model):
     # repeat_password = models.CharField(max_length = 20, verbose_name = 'Repeat passord')
     # is_agree = models.BooleanField()
 
-    def __str__(self):
-        return self.username
+    def get_objects(self):
+        return [self.username, self.password]
 
     class Meta:
         db_table = 'user'

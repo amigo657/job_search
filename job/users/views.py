@@ -2,7 +2,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from .forms import LoginForm, SignInForm
 from django.shortcuts import render, redirect
-
+from .models import User
 
 def sign_in(request):
     context = {"user_form" : SignInForm()}
@@ -25,12 +25,13 @@ def sign_in(request):
 
 def log_in(request):
     context = {"login_form": LoginForm()}
-    print(context)
     if request.method == "POST":
         user_form = LoginForm(request.POST)
         if user_form.is_valid():
             cd = user_form.cleaned_data
             user = authenticate(username=cd['username'], password=cd['password'])
+            # buf1 = User.objects.all()
+            # print("buf1 = ", buf1)
             login(request, user)
             return render(request, 'home.html')
         else:

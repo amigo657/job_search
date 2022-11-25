@@ -2,9 +2,9 @@ from django.db import models
 from datetime import datetime
 
 class Jobs(models.Model):
-    title = models.CharField(max_length = 15)
+    title = models.CharField(max_length = 30)
     work_class = models.CharField(max_length = 20)
-    place = models.CharField(max_length = 20)
+    place = models.CharField(max_length = 35)
     work_time = models.CharField(max_length = 20)
     salary = models.CharField(max_length = 20)
     text = models.CharField(max_length = 250)

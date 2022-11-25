@@ -28,6 +28,9 @@
 <!-- Header Area End -->
 
 <!-- Job Single Content Starts -->
+<div class="more-job-btn mt-5 text-center">
+    <a href="{% url 'create_job' %}" class="template-btn">Create job</a>
+</div>
 <section class="job-single-content section-padding">
     <div class="container">
         <div class="row">
@@ -47,7 +50,7 @@
             <div class="col-lg-8">
                 <div class="main-content">
                     <div class="single-content1">
-                        {% for i in job%}
+                        {% for i in job %}
                         <div class="single-job mb-4 d-lg-flex justify-content-between">
                             <div class="job-text">
                                 <h4>{{ i.title }}</h4>
